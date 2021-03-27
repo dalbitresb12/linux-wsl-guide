@@ -12,11 +12,11 @@ El sistema de archivos de Linux no funciona con letras como en Windows (por lo t
 
 > Se podría decir que `/` equivale a `C:\` en Windows.
 
-De la misma forma que en Windows, existen dos tipos de direcciones para las carpetas. Tenemos las direcciones absolutas, la cuales definen **la dirección completa en el sistema de archivos donde un archivo está ubicado**. Un ejemplo de una dirección absoulta en Linux es la siguiente: `/home/user/Desktop/photo.png` (el significado de esta dirección será explicado luego).
+De la misma forma que en Windows, existen dos tipos de direcciones para las carpetas. Tenemos las direcciones absolutas, la cuales definen **la dirección completa en el sistema de archivos donde un archivo está ubicado**. Un ejemplo de una dirección absoluta en Linux es la siguiente: `/home/user/Desktop/photo.png` (el significado de esta dirección será explicado luego).
 
 > Las direcciones absolutas en Windows toman la siguiente forma: `C:\Users\user\Desktop\photo.png`.
 
-Asimismo, tenemos también las direcciones relativas, las cuales se forman **siempre en base al directorio en el que nos encontramos**. Es decir, si nos encontramos en el directorio `/home/user/` y utilizamos la dirección relativa `Desktop/photo.png`, estariamos haciendo referencia al mismo archivo al que hicimos referencia con la anterior dirección absoluta.
+Asimismo, tenemos también las direcciones relativas, las cuales se forman **siempre en base al directorio en el que nos encontramos**. Es decir, si nos encontramos en el directorio `/home/user/` y utilizamos la dirección relativa `Desktop/photo.png`, estaríamos haciendo referencia al mismo archivo al que hicimos referencia con la anterior dirección absoluta.
 
 > Las direcciones relativas funcionan de la misma forma en Windows.
 
@@ -43,13 +43,13 @@ A continuación, encontrarás una lista de algunos de los comandos más útiles 
 La gran mayoría de los comandos en Linux siguen el siguiente formato:
 
 ```bash
-command [PARAMETROS]... [ARGUMENTOS]...
+command [PARÁMETROS]... [ARGUMENTOS]...
 ```
 
-- Los parametros vendrían a ser opciones que modifican el resultado del comando. Estos en su mayoría son acompañados de un guión (`-`) o (en algunos casos) doble guión (`--`) al inicio.
+- Los parámetros vendrían a ser opciones que modifican el resultado del comando. Estos en su mayoría son acompañados de un guión (`-`) o (en algunos casos) doble guión (`--`) al inicio.
 - Los argumentos son los valores que el comando recibe y que debe procesar para obtener un resultado.
 
-Por ejemplo, el comando [`ls`](#ls) tendrá un comportamiento diferente si añadimos el parametro `-l` (este parametro será explicado más adelante):
+Por ejemplo, el comando [`ls`](#ls) tendrá un comportamiento diferente si añadimos el parámetro `-l` (este parámetro será explicado más adelante):
 
 > En los bloques de código, un comando en la terminal **siempre** está acompañado del símbolo de dólar al inicio (`$`). Si una línea **no incluye** el símbolo de dólar, representa la salida de un comando (su _output_). Un comentario está definido con un símbolo de _hashtag_ (`#`).
 
@@ -64,7 +64,7 @@ drwxr-xr-x 2 dab12 dab12 4096 Mar 26 19:51 folder2
 drwxr-xr-x 2 dab12 dab12 4096 Mar 26 19:51 folder3
 ```
 
-> Todos los parametros adicionales se deben incluir **antes** de los argumentos que acepte el comando. En algunos casos, también funcionará poner los parametros luego de los argumentos, pero es más seguro ponerlos antes.
+> Todos los parámetros adicionales se deben incluir **antes** de los argumentos que acepte el comando. En algunos casos, también funcionará poner los parámetros luego de los argumentos, pero es más seguro ponerlos antes.
 
 ### `pwd`
 
@@ -74,7 +74,7 @@ Con este comando se puede obtener la dirección absoluta de la carpeta en la que
 
 ### `cd`
 
-Este comando se utiliza para navegar por los directorios en el [sistema de archivos](#sistema-de-archivos). Se le debe pasar como argumento una direción absoluta o una dirección relativa a la carpeta en la que la terminal se encuentra. Se puede utilizar también la dirección especial `..`, que representa al directorio padre al directorio en el que nos encontramos.
+Este comando se utiliza para navegar por los directorios en el [sistema de archivos](#sistema-de-archivos). Se le debe pasar como argumento una dirección absoluta o una dirección relativa a la carpeta en la que la terminal se encuentra. Se puede utilizar también la dirección especial `..`, que representa al directorio padre al directorio en el que nos encontramos.
 
 > Si el comando `cd` es ejecutado sin una ruta, el comando nos moverá a la carpeta de inicio del usuario con el que hemos iniciado sesión.
 
@@ -111,7 +111,7 @@ $ pwd
 
 Listar el contenido de un directorio. Por defecto, listará el contenido del directorio en el que se encuentra la terminal. Si se desea ver el contenido de otra carpeta, se puede incluir después de la instrucción: `ls /home/username/folder` (dirección absoluta) o `ls folder` (dirección relativa, desde `/home/username`).
 
-Este comando acepta también algunos parametros que modifican su _output_. Estos son algunos de los más útiles:
+Este comando acepta también algunos parámetros que modifican su _output_. Estos son algunos de los más útiles:
 
 - `-l`: Muestra los archivos y carpetas con información detallada como los permisos, tamaño en disco, propietario, entre otros. Por defecto, los tamaños de los archivos se muestran en _bytes_.
 - `-a`: Incluye en el listado los archivos ocultos, es decir, los archivos que empiezan con un punto (`.`).
@@ -140,7 +140,7 @@ drwxr-xr-x  2 dab12 dab12 4.0K Mar 26 19:51 folder2
 drwxr-xr-x  2 dab12 dab12 4.0K Mar 26 19:51 folder3
 ```
 
-> Como se puede observar, los parametros en muchos de los comandos de Linux se pueden agrupar con un mismo guion. Por lo tanto, el resultado de `ls -l -a -h` es idéntico al de `ls -lah`.
+> Como se puede observar, los parámetros en muchos de los comandos de Linux se pueden agrupar con un mismo guion. Por lo tanto, el resultado de `ls -l -a -h` es idéntico al de `ls -lah`.
 
 ### `cat`
 
@@ -172,11 +172,11 @@ $ cat file.txt
 ¡Hola mundo! Este contenido se escribió con el block de notas y se guardó en este archivo TXT.
 ```
 
-> Si se desea copiar un directorio entero, se debe añadir el parametro `-R`.
+> Si se desea copiar un directorio entero, se debe añadir el parámetro `-R`.
 
 ### `mv`
 
-Este comando principalmente se utiliza para mover archivos o carpetas, pero también se puede utilizar para renombrarlos. Los argumentos de este comando son similares a los del comando `cp`. En este caso, como primer argumento se recibirá la ruta al archivo que se desea mover. Como segundo argumento, se recibirá la ruta de destino del archivo.
+Este comando principalmente se utiliza para mover archivos o carpetas, pero también se puede utilizar para renombrar. Los argumentos de este comando son similares a los del comando `cp`. En este caso, como primer argumento se recibirá la ruta al archivo que se desea mover. Como segundo argumento, se recibirá la ruta de destino del archivo.
 
 > Para renombrar un archivo, la sintaxis sería la siguiente: `mv nombreantiguo.txt nuevonombre.txt`.
 
@@ -185,11 +185,11 @@ Este comando principalmente se utiliza para mover archivos o carpetas, pero tamb
 Este comando es utilizado para crear carpetas. Por ejemplo, si escribimos `mkdir Music` se creará una carpeta con nombre `Music` en el directorio en el que nos encontremos.
 
 - Para crear un directorio dentro de otro directorio, se usaría una sintaxis como esta: `mkdir Music/NewDir`.
-- En caso querramos crear las carpetas intermediarias si es que estas no existen, podemos usar el parametro `-p`. Por ejemplo, para crear una carpeta dentro de `NewDir` sin que hayamos creado esta carpeta previamente, usariamos la siguiente sintaxis: `mkdir -p Music/NewDir/NestedDir`.
+- En caso queramos crear las carpetas intermediarias si es que estas no existen, podemos usar el parámetro `-p`. Por ejemplo, para crear una carpeta dentro de `NewDir` sin que hayamos creado esta carpeta previamente, usaríamos la siguiente sintaxis: `mkdir -p Music/NewDir/NestedDir`.
 
 ### `rm`
 
-Este comando se utiliza para eliminar archivos o directorios (con todos sus contenidos). Si se desea eliminar una carpeta que no está vacía, se debe añadir los parametros `-rf`.
+Este comando se utiliza para eliminar archivos o directorios (con todos sus contenidos). Si se desea eliminar una carpeta que no está vacía, se debe añadir los parámetros `-rf`.
 
 ```bash
 $ ls /home/user
@@ -276,7 +276,7 @@ Mostrar más detalles
 Sí      No
 ```
 
-A través de este diálogo se le puede permitir a una aplicación acceder a características que están bloquedas por defecto (como por ejemplo, instalar aplicaciones, modificar ajustes del sistema, etc).
+A través de este diálogo se le puede permitir a una aplicación acceder a características que están bloqueadas por defecto (como por ejemplo, instalar aplicaciones, modificar ajustes del sistema, etc).
 
 En la terminal de Linux, podemos elevar los privilegios de un programa con añadiendo al inicio de este comando la palabra `sudo`. Este comando sirve para permitirle el acceso a un programa a los permisos más elevados del sistema a cambio de la contraseña de la cuenta de usuario.
 
@@ -290,9 +290,9 @@ $ sudo echo ¡Hola Mundo!
 ¡Hola Mundo!
 ```
 
-En este caso, el comando `echo` se ha ejecutado con los más altos privilegios en el sistema. Al intentar ejecutar el comando, `sudo` nos pidió que ingresemos la contraseña para el usuario con el que hemos iniciado sesión (en este caso, el usuario es `user`). 
+En este caso, el comando `echo` se ha ejecutado con los más altos privilegios en el sistema. Al intentar ejecutar el comando, `sudo` nos pidió que ingresemos la contraseña para el usuario con el que hemos iniciado sesión (en este caso, el usuario es `user`).
 
-> **La contraseña que escribamos no será visible en la consola**. Esto quiere decir que al escribir la contraseña será a ciegas. **No te preocupes si no ves que se añadan caracteres, esto está correcto**. `sudo` no muestra ningún caracter especial por cada caracter de la contraseña, solo se verá como si nada se hubiera ingresado.
+> **La contraseña que escribamos no será visible en la consola**. Esto quiere decir que al escribir la contraseña será a ciegas. **No te preocupes si no ves que se añadan caracteres, esto está correcto**. `sudo` no muestra ningún carácter especial por cada carácter de la contraseña, solo se verá como si nada se hubiera ingresado.
 
 Obviamente, ejecutar el comando `echo` con privilegios no brinda ningún beneficio especial. Más adelante veremos algunos comandos que requerirán usar el comnado `sudo` para que puedan funcionar (por ejemplo, al instalar paquetes con el comando `apt`).
 
@@ -438,7 +438,7 @@ apt     3342 root    4uW  REG   8,16        0 3815 /var/lib/apt/lists/lock
 apt     3777 root    4u   REG   8,16        0 3815 /var/lib/apt/lists/lock
 ```
 
-Si obtienes un resultado en alguno de estos comandos, obten el número que se ve en la columna PID y ejecutalo en este comando:
+Si obtienes un resultado en alguno de estos comandos, obtén el número que se ve en la columna PID y ejecutalo en este comando:
 
 ```bash
 sudo kill -9 <id_del_proceso>
